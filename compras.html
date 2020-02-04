@@ -10,8 +10,7 @@
 </head>
 <body>
   <input type="email" name="" id="campoemail">
-   <input type="password" name="" id="campocontrasena">
-   <button type="button" onclick="inicarsesion()">Guardar</button>
+   
    <button type="button" onclick="cerrarSesion()">Cerrar Sesion</button>
   
 
@@ -54,38 +53,9 @@ function cerrarSesion(){
 }
 
 
-function inicarsesion(){
-    //autenticacion de usuario
-firebase.auth().signInWithEmailAndPassword("hola@sems.com", "123456").catch(function(error) {
-  // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
-  console.log(errorMessage);
-  // ...
-});
 
-}
   
-  function guardar(){
-   //Id("campocontrasena").value;
 
-   // ((console.log(correo + contrasena);
-// crear un nuevo usuario
-
-firebase.auth().createUserWithEmailAndPassword("hola@sems.com", "123456").catch(function(error) {
-  // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
-
-  console.log(errorMessage);
-  // ...
-});
-
-
-
-
-
-  }
 
 
 
@@ -96,10 +66,8 @@ firebase.auth().createUserWithEmailAndPassword("hola@sems.com", "123456").catch(
     if(user != null){
 
    var uid = user.uid;
-   var email = user.email;
   
     console.log(uid)
-    console.log(email)
 
     //obtener la informacion ; 
 
@@ -109,6 +77,7 @@ firebase.auth().createUserWithEmailAndPassword("hola@sems.com", "123456").catch(
     // User is signed out.
     // ...
     console.log("usuario no autentificafo");
+   location.href="index.html";
   }
 });
 </script>
